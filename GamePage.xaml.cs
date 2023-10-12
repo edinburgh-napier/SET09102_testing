@@ -40,11 +40,12 @@ public partial class GamePage : ContentPage
     }
 
     /*!
-	 * Uses the GameType to select a word from the list by its length:
-	 * Easy : length < 7
-	 * Medium : 7 <= length < 10
-	 * Hard : length >= 10
-	 */
+	 Uses the GameType to select a word from the list by its length:
+  	\param gameType is a test string taking one of the following values
+	 Easy : length < 7
+	 Medium : 7 <= length < 10
+	 Hard : length >= 10
+    */
     private string SelectWord(string gameType)
     {
 		return "placeholder";
@@ -70,11 +71,10 @@ public partial class GamePage : ContentPage
     }
 
     /*!
-	 * Uses the GameType to select a word from the list by its length:
-	 * Easy : length < 7
-	 * Medium : 7 <= length < 10
-	 * Hard : length >= 10
-	 */
+	Checks whether the specified letter appears in the word
+	\param word is a string representing the word to be guessed
+	\param answer is the letter to be checked
+    */
     private bool CheckLetterInWord(string word, char answer)
     {
         throw new NotImplementedException();
@@ -82,8 +82,12 @@ public partial class GamePage : ContentPage
 
 
     /*!
-	 * Changes the image shown on the page and
-	 * Updates the visibility of the labels representing the letters in the word
+	Changes the image shown on the page and
+	Updates the visibility of the labels representing the letters in the word
+  	\param isCorrect is a boolean which is true if the letter is in the word
+   	\param word is a string representing the word to be guessed
+    	\param letter is a char representing the letter just checked
+     	\param remainingAttempts is an int which counts down the number of guesses the user is allowed
 	 */
     private void UpdateDisplay(bool isCorrect, string word, char letter, int remainingAttempts)
     {
